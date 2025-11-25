@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GWÖ Planspiel – Start</title>
+
+  <!-- korrekter Stylesheet-Pfad relativ zu /pages/start -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="bg-shape" aria-hidden="true"></div>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="nav">
+      <div class="logo">
+        <img src="assets/logo.jpg" alt="GWÖ Logo" class="logo-img" />
+      </div>
+      <div class="spacer"></div>
+      <button class="btn link" id="btnRules" data-i18n="rules">Spielregeln</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="panel pad hero">
+      <h1 data-i18n="title">Gemeinwohl-Ökonomie Planspiel</h1>
+      <p id="rulesMot" class="hero-motivation"></p>
+    </section>
+
+    <section class="panel pad">
+      <div class="stepper">
+
+        <!-- SPRACHE & LAND -->
+        <div class="step">
+          <h3><span class="stepno">1</span> <span data-i18n="stepLang">Sprache auswählen</span></h3>
+
+          <div class="two">
+            <div class="field">
+              <label for="lang" data-i18n="labelLang">Sprache</label>
+              <select id="lang">
+                <option value="de" selected>Deutsch</option>
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="it">Italiano</option>
+                <option value="fr">Français</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="country" data-i18n="labelCountry">Land</label>
+              <select id="country">
+                <option value="AT" selected>Österreich</option>
+                <option value="DE">Deutschland</option>
+                <option value="CH">Schweiz</option>
+                <option value="UK">UK</option>
+                <option value="ES">España</option>
+                <option value="IT">Italia</option>
+                <option value="FR">France</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- ANZAHL FIRMEN -->
+        <div class="step">
+          <h3><span class="stepno">2</span> Anzahl Firmen wählen</h3>
+
+          <div class="field">
+            <label for="firmCount">Wie viele Firmen spielen?</label>
+            <select id="firmCount">
+              <option value="1">1 Firma</option>
+              <option value="2">2 Firmen</option>
+              <option value="3">3 Firmen</option>
+              <option value="4">4 Firmen</option>
+              <option value="5">5 Firmen</option>
+            </select>
+          </div>
+
+          <!-- dynamische Eingabefelder -->
+          <div id="firmsContainer" class="firms-container"></div>
+          <p class="error" id="errFirm" aria-live="polite"></p>
+        </div>
+
+        <!-- AKTION -->
+        <div class="actions">
+          <button class="btn" id="startBtn" data-i18n="start">Weiter</button>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL: SPIELREGELN -->
+  <dialog id="rulesModal">
+    <div class="modal">
+      <div class="modal-head">
+        <h3 data-i18n="rulesTitle">Spielregeln</h3>
+        <button class="icon" id="closeRules" aria-label="Schließen">✕</button>
+      </div>
+
+      <ol id="rulesList" class="rules"></ol>
+
+      <div class="modal-foot">
+        <button class="btn" id="gotIt" data-i18n="gotIt">Verstanden</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <a href="datenschutz.html" target="_blank" rel="noopener">Datenschutz</a>
+    <span class="sep">|</span>
+    <a href="impressum.html" target="_blank" rel="noopener">Impressum</a>
+  </footer>
+
+  <!-- korrekter JS-Pfad -->
+  <script src="script.js"></script>
+
+</body>
+</html>

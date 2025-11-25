@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GWÖ-Planspiel – Abschluss & Ergebnis</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <!-- Feste Hintergrund-Ebene mit ABSOLUTER URL (wie beim Logo) -->
+  <div class="page-bg"></div>
+
+  <header>
+    <div class="headbar wrap">
+      <img src="https://austria.econgood.org/wp-content/uploads/sites/7/2024/08/ECOnGOOD_AT_Oesterreich_retina.jpg" alt="GWÖ Logo" />
+      <div class="actions">
+        <button class="btn btn-ghost" id="restartBtn">Neues Spiel</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro">
+      <h1 class="gluckwunsch">🎉 Herzlichen Glückwunsch! 🎉</h1>
+      <p class="banner-kicker">Du hast das GWÖ-Planspiel erfolgreich abgeschlossen!</p>
+      <h3 class="subtitle">Hier siehst du dein Spielergebnis und deine Gemeinwohl-Entwicklung.</h3>
+    </section>
+
+    <section class="gwoe-link-section">
+      <p>Wenn du mehr über die Gemeinwohl-Ökonomie erfahren willst:</p>
+      <a href="https://austria.econgood.org/" target="_blank" class="gwoe-link-btn">Zur GWÖ-Website</a>
+    </section>
+
+    <section class="dashboard">
+      <div class="chart-card">
+        <h3>Gemeinwohl-Index über 8 Runden (0–20 Punkte)</h3>
+        <canvas id="indexChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <h3>Werte nach Gemeinwohl-Dimensionen</h3>
+        <canvas id="valuesChart"></canvas>
+      </div>
+    </section>
+
+    <div class="export-container">
+      <button id="exportBtn" class="export-btn">Spieldaten exportieren</button>
+    </div>
+
+    <!-- Videos -->
+    <section class="info">
+      <h1>Videos</h1>
+      <div class="video-grid">
+        <div class="video-card">
+          <div class="video-text">
+            <div class="video-head">
+              <div class="icon icon-turq">i</div>
+              <h2 class="turq">Wissenswertes</h2>
+            </div>
+            <p></p>
+            <p>Im GWÖ-Planspiel leitest du eine Schokoladen-Firma und triffst Entscheidungen zu
+              Produktion, Einkauf, Preisen und Nachhaltigkeit … doch welche Auswirkungen haben
+              diese Entscheidungen auf Mensch und Umwelt?
+            </p>
+          </div>
+          <div class="video-wrapper">
+            <iframe class="video" src="https://www.youtube.com/embed/6eucuVbOkW8" title="Erklärvideo Teil 1" allowfullscreen></iframe>
+          </div>
+          <div><span class="badge badge-turq">INFO</span></div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-text">
+            <div class="video-head">
+              <div class="icon icon-green">i</div>
+              <h2 class="green">Klimawandel</h2>
+            </div>
+            <p></p>
+            <p>Was das heutige Wirschaftssystem auslöst und der GWÖ-Index verhindern will...</p>
+          </div>
+          <div class="video-wrapper">
+            <iframe class="video" src="https://www.youtube.com/embed/dMDQzXvEBTE" title="Erklärvideo Teil 2" allowfullscreen></iframe>
+          </div>
+          <div><span class="badge badge-green">INFO</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="buttons">
+      <a href="https://austria.econgood.org/mitglied-werden/" target="_blank">GWÖ-Mitglied werden</a>
+      <a href="https://austria.econgood.org/spenden/" target="_blank">❤️ Spenden</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Gemeinwohl-Ökonomie Österreich | <a href="https://austria.econgood.org/" target="_blank">austria.econgood.org</a></p>
+  </footer>
+
+  <!-- App Script -->
+  <script src="script.js"></script>
+</body>
+</html>
