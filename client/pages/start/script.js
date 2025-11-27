@@ -117,7 +117,9 @@ function applyI18n(lang){
   if (mot) mot.textContent = base.motivation || "";
   document.documentElement.lang = lang;
 }
-applyI18n("de");
+const autoLang = detectBrowserLang();
+$("#lang").value = autoLang;    // Dropdown automatisch setzen (falls vorhanden)
+applyI18n(autoLang);
 
 // Sprache umschalten
 $("#lang").addEventListener("change", ()=> applyI18n(currentLangKey()));
@@ -158,6 +160,26 @@ function renderFirmInputs(count) {
     wrapper.appendChild(input);
     firmsContainer.appendChild(wrapper);
   }
+}
+
+// Automatische Standardbrowserspracherkennung
+function detectBrowserLang() {
+  const raw = (navigator.language || navigator.userLanguage || "de").toLowerCase();
+
+  // Nur Sprachcode extrahieren
+  const short = raw.split("-")[0];
+
+  // Unterstützte Sprachen:
+  const supported = ["de", "en", "es", "it", "fr"];
+
+  return supported.includes(short) ? short : "de";
+}
+
+// Standsprache wieder auf DE setzen, falls keine passenden Sprachen gefunden wurden
+function currentLangKey(){
+  const val = $("#lang").value.toLowerCase();
+  const short = val.split("-")[0];
+  return DICT[short] ? short : "de";
 }
 
 // aktuelle Anzahl aus Select auslesen
